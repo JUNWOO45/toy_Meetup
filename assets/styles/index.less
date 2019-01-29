@@ -1,0 +1,394 @@
+html, body {
+    box-sizing: border-box;
+    margin: 0px;
+    font-family: 'Nanum Gothic', sans-serif;
+    background-color: rgb(235, 235, 235);
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+#content {
+    display: flex;
+}
+
+#appTitle {
+    background-color: white;
+    font-family: 'Pacifico', cursive;
+    margin: 0px;
+    padding: 10px;
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(247, 149, 37);
+}
+
+#loginBtn {
+    position: absolute;
+    top: 70px;
+    left: 650px;
+    color: rgb(247, 149, 37);
+}
+
+#loginBtn:hover {
+    color: #223A5E;
+    cursor: pointer;
+}
+
+#joinUs {
+    position: absolute;
+    top: 70px;
+    left: 710px;
+    color: rgb(247, 149, 37);
+}
+
+#joinUs:hover {
+    color: #223A5E;
+    cursor: pointer;
+}
+
+
+#nearbyMeetupList {
+    width: 800px;
+}
+
+#titleMeaning {
+    font-family: 'Noto Sans KR', sans-serif;
+    color: white;
+    padding-right: 150px;
+    text-align: right;
+    font-size: 13px;
+    margin: 0px;
+    background-color: rgb(247, 149, 37);
+}
+
+#explainApp {
+    font-family: 'Noto Sans KR', sans-serif;
+    color: white;
+    margin-top: 0px;
+    padding: 10px 0px 10px 10px;
+    background-color: rgb(247, 149, 37);
+    font-size: 17px;
+}
+
+#mapArea {
+    position: fixed;
+    left: 784px;
+    width: 100%;
+    height: 100%;
+}
+
+#map {
+    position: absolute;
+    right: 780px;
+    height: 755px;
+    width: 740px;
+}
+
+#resetFavorites {
+    position: absolute;
+    right: 80px;
+    top: 10px;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    color: rgb(247, 149, 37);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#resetFavorites:hover {
+    background-color: #223A5E;
+    color: white;
+}
+
+#openFavoriteModal {
+    position: absolute;
+    top: 10px;
+    left: 300px;
+    background-color: rgb(247, 149, 37);
+    border-radius: 50%;
+    opacity: 0.7;
+    border: none;
+    z-index: 1;
+    width: 100px;
+    height: 100px;
+    outline: none;
+}
+
+#openFavoriteModal:hover {
+    background-color: #223A5E;
+    cursor: pointer;
+}
+
+.meetup-information {
+    outline: none;
+    padding: 10px;
+    margin: 0px 50px 10px 50px;
+    margin-bottom: 50px;
+}
+
+.meetup-information:hover {
+    outline: 5px dotted #223A5E;
+}
+
+.added-favorite {
+    outline: none;
+    padding: 10px;
+    margin: 0px 50px 10px 50px;
+    margin-bottom: 50px;
+    outline: 5px dotted orange;
+}
+
+.added-favorite:hover {
+    outline: 5px dotted orange;
+}
+
+.meetup-title {
+    margin-left: 20px;
+    padding-top: 10px;
+    text-align: center;
+    font-size: 27px;
+    font-weight: bold;
+    border-top: 1px dotted rgb(85, 85, 85);
+}
+
+.meetup-title img {
+    cursor: pointer;
+}
+
+.meetup-title p {
+    margin-top: 0px;
+}
+
+.meetup-title a {
+    text-decoration: none;
+    color: black;
+}
+
+.meetup-title a:hover {
+    color: rgb(247, 149, 37);
+}
+
+.meetup-time {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(122, 122, 122);
+}
+
+.meetup-place {
+    color: rgb(122, 122, 122);
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.meetup-rsvp {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color:rgb(122, 122, 122);
+    padding-bottom: 5px;
+}
+
+.meetup-group-name{
+    border-top: 1px dotted rgb(85, 85, 85);
+    margin-left: 20px;
+    font-size: 21px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+
+.host-information {
+    margin-left: 100px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.host-information img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+#favoriteList {
+    font-size: 20px;
+    font-weight: bold; 
+    padding-top: 10px;
+}
+
+#favoriteList a {
+    color: black;
+    text-decoration: none;
+    
+}
+
+#favoriteList a:hover {
+    color: rgb(247, 149, 37);
+    text-decoration: none;
+}
+
+#favoriteModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+  
+.closeModal {
+    color: white;
+    float: right;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.closeModal:hover {
+    color: #223A5E;
+    text-decoration: none;
+    cursor: pointer;
+}
+  
+.modal-header {
+    padding: 5px;
+    background-color: rgb(247, 149, 37);
+    height: 70px;
+    color: white;
+}
+  
+.modal-body {
+    padding: 10px;
+}
+
+.deleteFavorite {
+    float: right;
+    color: #223A5E;
+    font-size: 25px;
+    position: relative;
+    top: -2px;
+}
+
+.deleteFavorite:hover {
+    color: rgb(247, 149, 37);
+    cursor: pointer;
+}
+  
+.modal-footer {
+    padding: 10px;
+    background-color: rgb(247, 149, 37);
+    height: 30px;
+}
+  
+.modal-content {
+    position: relative;
+    background-color: white;
+    margin-top: 10%;
+    margin-left: 10%;
+    width: 80%;
+    animation-name: animateFromTop;
+    animation-duration: 0.4s;
+}
+  
+@keyframes animateFromTop {
+    from {top: -500px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+.loginArea {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+    opacity: 0.9;
+}
+
+.lock {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: absolute;
+    top: -75px;
+    left: calc(50% - 75px);
+}
+
+.login-box {
+    position : absolute;
+    left : 50%;
+    top : 50%;
+    transform : translate(-50%, -50%);
+    border: 4px solid rgb(255, 136, 0);
+    width: 300px;
+    height: 400px;
+    color: black;
+    padding: 50px 30px;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+@keyframes animatetop {
+    from {top: -100px; opacity: 0}
+    to {top: 400; opacity: 1}
+}
+
+.login-box h1 {
+    text-align: center;
+    color: white;
+}
+
+.login-box p {
+    margin: 0px;
+    padding: 0px;
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+}
+
+.login-box input {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.login-box input[type = "text"], input[type = "password"] {
+    border: none;
+    outline: none;
+    height: 30px;
+    font-size: 20px;
+}
+
+.login-box input[type = "submit"] {
+    border: none;
+    outline: none;
+    height: 50px;
+    background-color: rgb(255, 136, 0);
+    font-size: 20px;
+    border-radius: 30px;
+}
+
+.login-box input[type = "submit"]:hover {
+    background-color: white;
+    color: rgb(255, 136, 0);
+    cursor: pointer;
+}
+
+.login-box a {
+    text-decoration: none;
+    font-size: 15px;
+    color: white
+}
+
+.login-box a:hover {
+    color: rgb(247, 149, 37);
+}

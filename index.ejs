@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700&amp;subset=korean" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&amp;subset=korean" rel="stylesheet">
+    <title>MeetupDa</title>
+</head>
+<body>
+    <div id = "content">
+        <div id = "meetupArea">
+            <p id = "appTitle">MeetupDa</p>
+            <span id = "loginBtn">로그인</span>
+            <span id = "joinUs">회원가입</span>
+
+            <div class = "loginArea">
+                <div class = "login-box">
+                        <img src="lock.png" class = "lock">
+                        <h1>Login here</h1>
+                        <form>
+                            <p>Username</p>
+                            <input type="text" name = "" placeholder="Enter Username">
+                            <p>Password</p>
+                            <input type="password" name = "" placeholder="Enter Password">
+                            <input type="submit" value = "Login">
+                            <br>
+                            <a href = "#">비밀번호가 생각나지 않아요!</a>
+                            <br>
+                            <a href = "#">계정을 새로 만들고 싶어요!</a>
+                        </form>
+                    </div>
+            </div>
+
+            <p id = "titleMeaning">::미덥다 : 믿음, 신뢰가 있다.</p>
+            <p id = "explainApp"> ::MeetupDa(미덥다)는 전세계를 Meetup으로 연결시키위해 탄생한 웹 어플리케이션입니다.</p>
+
+            <div id = "favoriteModal" class = "modal">
+                <div class = "modal-content">
+                    <div class = "modal-header">
+                        <span class = "closeModal">&times;</span>
+                        <h2>Your favorite meetup</h2>
+                        <button id = "resetFavorites">Reset</button>
+                    </div>
+                    <div class = "modal-body">
+                        <div id = "favoriteContainer"></div>
+                    </div>
+                    <div class = "modal-footer">
+                    </div>
+                </div>
+            </div>
+
+            <div id = "nearbyMeetupList">
+            </div>
+        </div>
+
+        <div id = "mapArea">
+            <div id = "map"></div>
+            <button id = "openFavoriteModal"><img src = "favorite.png"></button>
+        </div>
+    </div>
+
+    <script src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyB8dr6UiK7WpKOm0xP8yyRw4jYCcQ7y1Zo">
+    </script>
+</body>
+</html>
