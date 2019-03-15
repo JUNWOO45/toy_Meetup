@@ -10,13 +10,8 @@ const initialRenderPosition = {
 let map = new google.maps.Map(document.querySelector("#map"), initialRenderPosition);
 const currentFavoriteList = document.querySelector("#favoriteContainer");
 const favoriteMeetupStorage = localStorage;
-favoriteMeetupStorage.removeItem("loglevel:webpack-dev-server");
 
-// function consistFavoriteMeetupStorage() {
-//     for(let i = 0; i < Object.keys(favoriteMeetupStorage).length; i++) {
-//         currentFavoriteList.innerHTML += `<div id = "favoriteList"> - <a href = ${favoriteMeetupStorage[Object.keys(favoriteMeetupStorage)[i]]} target="_blank">${Object.keys(favoriteMeetupStorage)[i]}</a><span class = "deleteFavorite">&times;</span></div>`;
-//     }
-// }
+favoriteMeetupStorage.removeItem("loglevel:webpack-dev-server");
 consistFavoriteMeetupStorage(favoriteMeetupStorage, currentFavoriteList);
 
 google.maps.event.addListener(map, "click", function(event) {
